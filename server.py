@@ -47,10 +47,11 @@ while (video.isOpened()):
     jpg_text = str(jpg_text).split("'")[1]
     gonderilcekData = '''
         {"sicaklik":''' + str(random.randint(10,80)) + ''',"resim":"''' + jpg_text + '''","basinc":''' + str(random.randint(10,80)) + ''',"basinc1":''' + str(random.randint(10,80)) +'''}'''
-    print(gonderilcekData)
+    #print(gonderilcekData)
     s.send(gonderilcekData.encode()) # veriyi gonderdi
     #print(gonderilcekData)
     data = s.recv(1024)# cevap bekle
+    print(data)
     if(data.decode() == "-1"):
         break
     #time.sleep(1)
